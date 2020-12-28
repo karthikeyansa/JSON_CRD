@@ -18,7 +18,7 @@ $ python setup.py develop
 
 ## Get Started
 
-The main class is JSONMerger which is located in the `JSON_CRD/jsonfile_crd/__init__.py`
+The main class is JsonFileOperation which is located in the `JSON_CRD/jsonfile_crd/__init__.py`
 The cli commands were referred from click `https://click.palletsprojects.com/en/7.x/`
 
 #### To do json_crd

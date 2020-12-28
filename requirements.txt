@@ -1,0 +1,21 @@
+bleach==3.2.1
+certifi==2020.12.5
+chardet==4.0.0
+colorama==0.4.4
+docutils==0.16
+idna==2.10
+keyring==21.7.0
+mypythonlib @ file:///Users/jagan/desktop/testing/dist/mypythonlib-1.0.6-py3-none-any.whl
+packaging==20.8
+pkginfo==1.6.1
+Pygments==2.7.3
+pyparsing==2.4.7
+readme-renderer==28.0
+requests==2.25.1
+requests-toolbelt==0.9.1
+rfc3986==1.4.0
+six==1.15.0
+tqdm==4.55.0
+twine==3.3.0
+urllib3==1.26.2
+webencodings==0.5.1

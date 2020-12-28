@@ -1,8 +1,8 @@
 from setuptools import find_packages, setup
 
 setup(
-    name='mypythonlib',
-    packages=find_packages(include=['mypythonlib']),
+    name='jsonfile_crd',
+    packages=find_packages(include=['jsonfile_crd']),
     version='1.0.6',
     description='Libraries to perform CRD over JSON file',
     author='Karthikeyan',

@@ -4,14 +4,14 @@ import time
 
 from sys import getsizeof
 
-class JsonFileOps(object):
+class JsonFileOperation(object):
 	def __init__(self, filepath=None):
 		self.filepath = filepath
 		if not filepath:
 			self.filepath = 'default.json'
 			if not os.path.isfile(self.filepath):
 				with open(self.filepath, 'w') as file:
-					file.write(json.dump({}))
+					json.dump({}, file)
 
 
 	'''
@@ -62,7 +62,8 @@ class JsonFileOps(object):
 
 		if key in json_obj:
 			raise Exception("Key already exists")
-
+		
+		json_obj[key] = {}
 		with open(self.filepath,"w") as file:
 			json_obj[key]['value'] = value
 			if ttl:

@@ -1,13 +1,24 @@
+appnope==0.1.2
+backcall==0.2.0
 bleach==3.2.1
 certifi==2020.12.5
 chardet==4.0.0
 colorama==0.4.4
+decorator==4.4.2
 docutils==0.16
 idna==2.10
+ipython==7.19.0
+ipython-genutils==0.2.0
+jedi==0.18.0
+jsonfile-crd @ file:///Users/jagan/Desktop/testing/dist/jsonfile_crd-1.0.6-py3-none-any.whl
 keyring==21.7.0
-mypythonlib @ file:///Users/jagan/desktop/testing/dist/mypythonlib-1.0.6-py3-none-any.whl
 packaging==20.8
+parso==0.8.1
+pexpect==4.8.0
+pickleshare==0.7.5
 pkginfo==1.6.1
+prompt-toolkit==3.0.8
+ptyprocess==0.6.0
 Pygments==2.7.3
 pyparsing==2.4.7
 readme-renderer==28.0
@@ -16,6 +27,8 @@ requests-toolbelt==0.9.1
 rfc3986==1.4.0
 six==1.15.0
 tqdm==4.55.0
+traitlets==5.0.5
 twine==3.3.0
 urllib3==1.26.2
+wcwidth==0.2.5
 webencodings==0.5.1

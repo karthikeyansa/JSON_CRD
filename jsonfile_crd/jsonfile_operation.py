@@ -110,3 +110,4 @@ class JsonFileOperation(object):
 		del json_obj[key]
 		with open(self.filepath,"w") as file:
 			json.dump(json_obj, file)
+		return "data_deleted"

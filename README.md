@@ -16,22 +16,28 @@ This install the jsonfile_crd as python packages:
 $ python setup.py develop
 ```
 
-## Get Started
+## Testing
 
-The main class is JsonFileOperation which is located in the `JSON_CRD/jsonfile_crd/__init__.py`
-The cli commands were referred from click `https://click.palletsprojects.com/en/7.x/`
+The test file is located in the `JSON_CRD/tests/test_jsonfile_operation.py`
+The testing were referred from pytest `https://docs.pytest.org/en/latest/getting-started.html`
 
-#### To do json_crd
+The command to do test:
+`python setup.py pytest`
 
-```
-$ json_crd --path="/Users/karthikeyan/desktop/testing/mydata.json" --key="round" --value="ball" --ttl=20
-```
-
-returns "Operations performed at /Users/karthikeyan/desktop/testing/mydata.json" for the above case.
+The function to tests for creating data
 
 ```
-$ json_crd --path="/Users/karthikeyan/desktop/testing/mydata.json"
+test_create(key, value, ttl)
 ```
 
-returns "Failed for the following reason:
-Missing option '--key'." for the above case.
+The function to tests for creating data
+
+```
+test_read(key)
+```
+
+The function to tests for creating data
+
+```
+test_delete(key)
+```

@@ -1,8 +1,0 @@
-README.md
-setup.py
-jsonfile_crd/__init__.py
-jsonfile_crd/jsonfile_operation.py
-jsonfile_crd.egg-info/PKG-INFO
-jsonfile_crd.egg-info/SOURCES.txt
-jsonfile_crd.egg-info/dependency_links.txt
-jsonfile_crd.egg-info/top_level.txt

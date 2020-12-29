@@ -8,27 +8,25 @@ global_lock = threading.Lock()
 
 
 class JsonFileOperation(object):
-	def __init__(self, filepath=None):
-		self.filepath = filepath
-		if not filepath:
-			self.filepath = 'default.json'
-			if not os.path.isfile(self.filepath):
-				with open(self.filepath, 'w') as file:
-					json.dump({}, file)
-
+    def __init__(self, filepath=None):
+        self.filepath = filepath
+        if not filepath:
+            self.filepath = './default.json'
+            if not os.path.isfile(self.filepath):
+                with open(self.filepath, 'w') as file:
+                    json.dump({}, file)
+        self.validate_file(self.filepath)
 
     '''
 	The function validate_file valids both filepath and filesize and raises an
 	exception when the path is invalid or filesize exceeds 1GB = 1073741824 bytes.
 	'''
 
-    def get_filesize(self, file_path):
-        if os.stat(file_path).st_size > 1073741824:
-            return "File size exceeded 1GB"
-
-	def file_exist(self,filepath):
-		if not os.path.exists(file_path):
-            return "Invalid file path"
+    def validate_file(self, filepath):
+        if not os.path.exists(filepath):
+            raise Exception("Invalid file path")
+        if os.stat(filepath).st_size > 1073741824:
+            raise Exception("File size exceeded 1GB")
 
     '''
 	The function validate_key valids key length and raises an
@@ -52,6 +50,16 @@ class JsonFileOperation(object):
             raise Exception("Max value size allowed is 16KB")
 
     '''
+	The function validate_value valids value size and raises an
+	exception when the value size exceeds 16 KB = 16000 bytes.
+	'''
+
+    def validate_jsonobj(self, json_obj):
+        if len(json.dumps(json_obj)) > 1073741824:
+            raise Exception("File size exceeds 1GB")
+
+    '''
+	The function read_file is responsible for returning a json object from the loaded file.
 	'''
 
     def read_file(self):
@@ -80,8 +88,8 @@ class JsonFileOperation(object):
             json_obj[key]['value'] = value
             if ttl:
                 json_obj[key]['ttl'] = time.time() + ttl
+            self.validate_jsonobj(json_obj)
             json.dump(json_obj, file)
-       
         global_lock.release()
         return "data_created"
 
@@ -110,7 +118,7 @@ class JsonFileOperation(object):
 	'''
 
     def delete_data(self, key):
-		while global_lock.locked():
+        while global_lock.locked():
             continue
         global_lock.acquire()
         self.validate_key(key)
@@ -127,5 +135,5 @@ class JsonFileOperation(object):
         del json_obj[key]
         with open(self.filepath, "w") as file:
             json.dump(json_obj, file)
-		global_lock.release()
+        global_lock.release()
         return "data_deleted"

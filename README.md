@@ -7,13 +7,7 @@ JSON CRD requires python3.
 This install all the necessary dependancies:
 
 ```
-$ pip install -r requirements.txt
-```
-
-This install the jsonfile_crd as python packages:
-
-```
-$ python setup.py develop
+$ pip3 install dist/jsonfile_crd-1.0.6
 ```
 
 ## Testing
@@ -24,20 +18,10 @@ The testing were referred from pytest `https://docs.pytest.org/en/latest/getting
 The command to do test:
 `python setup.py pytest`
 
-The function to tests for creating data
+The function test_JsonFileOperation with key, value and ttl as arguments 
+returns "data_created", "key", "data_deleted".
 
 ```
-test_create(key, value, ttl)
+test_JsonFileOperation()
 ```
 
-The function to tests for creating data
-
-```
-test_read(key)
-```
-
-The function to tests for creating data
-
-```
-test_delete(key)
-```

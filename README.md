@@ -6,7 +6,7 @@ JSON CRD requires python3.
 
 For installing third-party-libraries it is a best pratice to use Virtual Environment
 
-This install all the necessary dependancies:
+To install all the necessary dependancies:
 
 ```
 $ pip3 install dist/jsonfile_crd-1.0.6

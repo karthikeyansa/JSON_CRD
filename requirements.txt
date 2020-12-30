@@ -1,25 +1,14 @@
-appnope==0.1.2
-backcall==0.2.0
 bleach==3.2.1
 certifi==2020.12.5
 chardet==4.0.0
 colorama==0.4.4
-decorator==4.4.2
 docutils==0.16
 idna==2.10
-ipython==7.19.0
-ipython-genutils==0.2.0
-jedi==0.18.0
-# Editable install with no version control (jsonfile-crd==1.0.6)
--e /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages
-keyring==21.7.0
+importlib-metadata==3.3.0
+jsonfile-crd==1.0.1
+keyring==21.8.0
 packaging==20.8
-parso==0.8.1
-pexpect==4.8.0
-pickleshare==0.7.5
 pkginfo==1.6.1
-prompt-toolkit==3.0.8
-ptyprocess==0.6.0
 Pygments==2.7.3
 pyparsing==2.4.7
 readme-renderer==28.0
@@ -28,8 +17,8 @@ requests-toolbelt==0.9.1
 rfc3986==1.4.0
 six==1.15.0
 tqdm==4.55.0
-traitlets==5.0.5
 twine==3.3.0
+typing-extensions==3.7.4.3
 urllib3==1.26.2
-wcwidth==0.2.5
 webencodings==0.5.1
+zipp==3.4.0

@@ -37,9 +37,9 @@ read_thread = []
 delete_thread = []
 
 
-for i in range(5):
+for i in range(26):
     '''
-    This loop creates and appends threads for performing 
+    This loop runs 26 times creating 26 keys and appends threads for performing 
     create, read, delete operations.
     '''
     ct = threading.Thread(target= mycreateThread, args=[i,])

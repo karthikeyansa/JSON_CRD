@@ -2,10 +2,10 @@ import json
 import os
 import time
 import threading
-from .jsonfile_helper import HelperValidator
+from .jsonfile_helper import Helper
 
 # helper_obj is used access methods from HelpValidator class
-helper_obj = HelperValidator()
+helper_obj = Helper()
 
 # global_lock is an variable assigned to access Lock() from threading.
 global_lock = threading.Lock()
@@ -15,13 +15,19 @@ global filename
 # default filename when filename is not specified by the user.
 filename = './default.json'
 
+'''
+The class JsonFileOperation is responsible for executing functions 
+like create_data, read_data, delete_data under thread-safe 
+conditions.
+'''
 class JsonFileOperation(object):
-    '''
-    The class JsonFileOperation is responsible for executing functions 
-    like create_data, read_data, delete_data under thread-safe 
-    conditions.
-    '''
+    
     def __init__(self, filepath=None):
+        '''
+        The __init__ function is responsible to check for filepath, 
+        if its not provided a file named 'default.json' is created in
+        the current working directory.
+        '''
         self.filepath = filepath
         if not filepath:
             self.filepath = filename
@@ -56,8 +62,7 @@ class JsonFileOperation(object):
             json.dump(json_obj, file)
         global_lock.release()
         return "data_created"
-    
-    
+ 
     def read_data(self, key):
         '''
         The function read_data is responsible for reading the JSON data, 
@@ -76,8 +81,6 @@ class JsonFileOperation(object):
             del json_obj[key]
             raise Exception("key has expired")
         return value.get('value')
-
-    
 
     def delete_data(self, key):
         '''

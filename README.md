@@ -50,7 +50,7 @@ returns as follows.
 abcdesfhgkt123
 ```
 
-* On calling read_data from JsonFileOperation class with key as argument.
+* On calling delete_data from JsonFileOperation class with key as argument.
 
 ```
 jsonfile_obj.delete_data('datastream')

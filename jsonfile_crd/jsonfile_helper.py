@@ -7,11 +7,11 @@ MAX_FILESIZE = 1073741824
 MAX_KEYLENGTH = 32
 MAX_VALUESIZE = 16000
 
-class HelperValidator:
-    '''
-    The class HelperValidator is responsible for validating filepath, 
-    filesize, key, value, json_obj and loading a file.
-    '''
+'''
+The class HelperValidator is responsible for validating filepath, 
+filesize, key, value, json_obj and loading a file.
+'''
+class Helper:
 
     def validate_file(self,filepath):
         '''
@@ -40,8 +40,6 @@ class HelperValidator:
         '''
         if getsizeof(value) > MAX_VALUESIZE:
             raise Exception("Max value size allowed is 16KB")
-    
-   
 
     def validate_jsonobj(self,json_obj):
         '''
@@ -50,8 +48,6 @@ class HelperValidator:
         '''
         if len(json.dumps(json_obj)) > MAX_FILESIZE:
             raise Exception("File size exceeds 1GB")
-    
-    
 
     def read_file(self,filepath):
         '''

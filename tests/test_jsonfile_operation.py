@@ -1,12 +1,12 @@
 from jsonfile_crd.jsonfile_operation import JsonFileOperation
-from jsonfile_crd.jsonfile_helper import HelperValidator
+from jsonfile_crd.jsonfile_helper import Helper
 import unittest
 
 class Testing(unittest.TestCase):
     # json_obj is used to access methods from JsonFileOperation class
     json_obj = JsonFileOperation()
     # helper_obj is used to access methods from HelperValidator class
-    helper_obj = HelperValidator()
+    helper_obj = Helper()
 
     # To test for key is alphanum.
     def test_key_isalpha(self):

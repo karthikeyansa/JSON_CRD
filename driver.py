@@ -14,7 +14,6 @@ def mycreateThread(args):
     ttl = 200
     jsonfile_obj.create_data(key, value, ttl)
 
-
 def myreadThread(args):
     '''
     This function is responsible to call read_data 
@@ -22,7 +21,6 @@ def myreadThread(args):
     '''
     key = "data"+chr(97+args)
     jsonfile_obj.read_data(key)
-
 
 def mydeleteThread(args):
     '''
@@ -36,7 +34,6 @@ create_thread = []
 read_thread = []
 delete_thread = []
 
-
 for i in range(26):
     '''
     This loop runs 26 times creating 26 keys and appends threads for performing 
@@ -48,7 +45,6 @@ for i in range(26):
     create_thread.append(ct)
     read_thread.append(rt)
     delete_thread.append(dt)
-
 
 for c,r,d in zip(create_thread,read_thread,delete_thread):
     '''
